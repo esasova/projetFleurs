@@ -32,3 +32,11 @@
 .lmj-cart-closed > button {
 	color: black;
 }
+.lmj-delete-item-button {
+	background-color: #16854d;
+	height: 20px;
+	width: 20px;
+	color: white;
+	font-weight: bold;
+	margin-left: 2%;
+}

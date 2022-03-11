@@ -2,10 +2,10 @@ import { plantList } from "../datas/plantList"
 import PlantItem from "./PlantItem"
 import Category from './Category'
 import '../style/ShoppingList.css'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 function ShoppingList({cart, updateCart, isOpen, setIsOpen }) {
-    const [selectedCategory, setSelectedCategory] = useState('')
-    const finalPlantList = selectedCategory === '' ? plantList : plantList.filter(plant => plant.category === selectedCategory)
+    const [selectedCategory, setSelectedCategory] = useState([])
+    const finalPlantList = selectedCategory.length === 0 ? plantList : plantList.filter(plant => selectedCategory.includes(plant.category))
    function addToCart(name, price) {
        setIsOpen(true)
         const alreadyAddedPlant = cart.find(plant => plant.name === name)
